@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venha me Ver!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(270deg, #8e44ad, #ff4081);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #ff4081;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff4081;
+            padding: 0.9375rem 2.5rem;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d5007d;
+            transform: scale(1.1);
+        }
+
+        .button-yes {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .text-widget {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slick-slider {
+            margin: 0 auto;
+            max-width: 80%; /* Ajuste o tamanho do carrossel aqui */
+            text-align: center;
+        }
+
+        .slick-slide img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px; /* Ajuste a altura máxima das imagens aqui */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            object-fit: cover;
+        }
+
+        .slick-slide img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .widget-message h2 {
+            font-size: 1.75rem;
+            color: #ff4081;
+        }
+
+        .text-message {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.125rem;
+            color: #fff;
+            text-align: left;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 10px;
+            flex: 1;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            color: #ff4081;
+            font-size: 1.125rem;
+            margin-top: 10px;
+        }
+
+        .testimonial .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            color: #bdbdbd;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-text a {
+            color: #ff4081;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-text a:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 10px;
+            }
+            .slick-slider {
+                max-width: 90%; /* Ajuste para telas menores */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .button {
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .slick-slider {
+                max-width: 100%; /* Ajuste para telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, h2, h3 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
+            .button {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+            .testimonial {
+                flex-direction: column;
+                text-align: center;
+            }
+            .testimonial .avatar {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="container">
+        <h1 class="animate__animated animate__fadeInDown">Olá, sou Kamila!</h1>
+    </div>
+</section>
+
+<section style="background-color: rgba(33, 33, 33, 0.9);">
+    <div class="container">
+        <div class="text-widget animate__animated animate__fadeInUp">
+            <div class="widget-message">
+                <h2 class="animate__animated animate__bounceIn">Conheça meus pacotes exclusivos!</h2>
+            </div>
+            <div class="text-message animate__animated animate__fadeInLeft">
+                <p>Explore meus pacotes de fotos e vídeos premium, e desfrute de videochamadas personalizadas comigo.</p>
+                <p><strong>Não perca tempo, clique em "Sim" agora para adquirir meus conteudo👅!</strong></p>
+            </div>
+            <div class="slick-slider animate__animated animate__zoomIn">
+                <div><img src="modelo1.jpg" alt="Modelo 1"></div>
+                <div><img src="modelo2.jpg" alt="Modelo 2"></div>
+                <div><img src="modelo3.jpg" alt="Modelo 3"></div>
+                <!-- Adicione mais imagens conforme necessário -->
+            </div>
+            <div style="text-align: center;">
+                <a href="https://wa.me/seunumerodewhatsapp" class="button button-yes">Sim</a>
+                <a href="https://google.com" class="button">Não</a>
+            </div>
+            <div class="testimonial">
+                <img src="cliente1.jpg" alt="Cliente 1" class="avatar">
+                <p>"Os pacotes da Kamila são incríveis! As fotos e vídeos são de alta qualidade, vale cada centavo."</p>
+                <p class="author">- Rodolfo Pirani</p>
+            </div>
+            <div class="testimonial">
+                <img src="cliente2.jpg" alt="Cliente 2" class="avatar">
+                <p>"Adorei as videochamadas! Kamila é muito profissional e atenciosa, recomendo a todos."</p>
+                <p class="author">- Keynan Cardoso</p>
+            </div>
+            <div class="testimonial">
+                <img src="cliente3.jpg" alt="Cliente 3" class="avatar">
+                <p>"Fiz o Pagamento do pack... e olha me surpendi com tanta coisa boa😋"</p>
+                <p class="author">- Enzo Felipe</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-color: #1b1b1b;">
+    <div class="container">
+        <div class="text-widget footer-text animate__animated animate__fadeIn">
+            <p>© 2022 - Todos os direitos reservados.</p>
+            <p><a href="/termos">Termos de Uso</a> | <a href="/politicas">Políticas de Privacidade</a></p>
+        </div>
+        <div class="text-widget footer-text">
+            <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.</p>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slick-slider').slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            variableWidth: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        dots: true
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>
